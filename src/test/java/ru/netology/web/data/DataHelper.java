@@ -5,7 +5,8 @@ import lombok.Value;
 import java.util.Random;
 
 public class DataHelper {
-    private DataHelper() {}
+    private DataHelper() {
+    }
 
     @Value
     public static class AuthInfo {
@@ -15,25 +16,18 @@ public class DataHelper {
 
     @Value
     public static class VerificationCode {
-        //private String code;
         String code;
     }
 
     @Value
     public static class CardInfo {
-        //private String firstNumber;
         String cardNumber;
-        //private String secondNumber;
         String testId;
     }
 
     public static AuthInfo getAuthInfo() {
         return new AuthInfo("vasya", "qwerty123");
     }
-
-/*    public static AuthInfo getOtherAuthInfo(AuthInfo original) {
-        return new AuthInfo("petya", "123qwerty");
-    }*/
 
     public static VerificationCode getVerificationCodeFor(AuthInfo authInfo) {
         return new VerificationCode("12345");
@@ -48,16 +42,10 @@ public class DataHelper {
     }
 
     public static int generateValidAmount(int balance) {
-        /*    public int rnd(int min, int max) {
-        max -= min;*/
-        //String sum = String.valueOf((int) (Math.random() * 10_000 + 1));
-
-        //return (int)Math.random() * balance + 1;
         return new Random().nextInt(balance) + 1;
     }
 
     public static int generateInvalidAmount(int balance) {
         return Math.abs(balance) + 1;
     }
-
 }
