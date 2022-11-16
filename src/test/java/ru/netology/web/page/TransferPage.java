@@ -22,11 +22,11 @@ public class TransferPage {
     }
 
     public DashboardPage validTransfer(String amountTransfer, DataHelper.CardInfo cardInfo) {
-        Transfer(amountTransfer, cardInfo);
+        transfer(amountTransfer, cardInfo);
         return new DashboardPage();
     }
 
-    public void Transfer(String amountTransfer, DataHelper.CardInfo cardInfo) {
+    public void transfer(String amountTransfer, DataHelper.CardInfo cardInfo) {
         amountInput.setValue(amountTransfer);
         fromInput.setValue(cardInfo.getCardNumber());
         transferButton.click();

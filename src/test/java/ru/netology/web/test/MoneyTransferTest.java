@@ -44,7 +44,7 @@ class MoneyTransferTest {
     void notTransferFromFirstToSecond() {
         var amount = generateInvalidAmount(firstCardBalance);
         var transferPage = dashboardPage.selectCardToTransfer(getSecondCardInfo());
-        transferPage.Transfer(String.valueOf(amount), getFirstCardInfo());
+        transferPage.transfer(String.valueOf(amount), getFirstCardInfo());
         transferPage.seeErrorMessage("Выполнена попытка перевода суммы, превышающей баланс" + amount);
         var actualFirstCardBalance = dashboardPage.getCardBalance(getFirstCardInfo());
         var actualSecondCardBalance = dashboardPage.getCardBalance(getSecondCardInfo());
